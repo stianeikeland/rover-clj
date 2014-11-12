@@ -1,14 +1,14 @@
-# rover
+# Mars Rover Kata (Clojure)
 
-A Clojure library designed to ... well, that part is up to you.
+Mars Rover Kata - Bergen Coding Dojo 12. November 2014
 
 ## Usage
 
-FIXME
+lein run
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Whatever
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
