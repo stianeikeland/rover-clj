@@ -2,9 +2,13 @@
 
 Mars Rover Kata - Bergen Coding Dojo 12. November 2014
 
+## Screenshot
+
+![Mars Rover Console UI](http://static.eikeland.se.s3.amazonaws.com/rover.png)
+
 ## Usage
 
-lein run
+$ lein run
 
 ## License
 
