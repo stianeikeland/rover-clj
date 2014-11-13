@@ -20,15 +20,13 @@
          (println "Where do you want to move?")
          (let [input (read-line)]
            (when-not (= input "q")
-             (let [new-game (execute game input)]
-               (recur new-game)))))
+             (recur (execute game input)))))
        (catch Exception e
          (print-map (ex-data e))
-         (println (style "I'm afraid I can't do that, Dave!" :red)))))
+         (println (style (.getMessage e) :red)))))
 
 (defn play-game []
-  (let [game (new-game 20 50)]
-    (play game)))
+  (play (new-game 20 50)))
 
 (defn -main []
   (play-game))

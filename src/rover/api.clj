@@ -30,14 +30,14 @@
   (let [new-pos (new-position game change)
         cell    (get-in (:world game) new-pos)]
     (if-not (= cell :_)
-      (throw (ex-info "I can't do that, Dave!" game))
+      (throw (ex-info "I'm afraid I can't do that, Dave!" game))
       (assoc game :position new-pos))))
-
-
-;;; Public API
 
 (defn- gen-row [length]
   (mapv (fn [_] (rand-nth [:_ :_ :_ :X])) (range length)))
+
+
+;;; Public API
 
 (defn new-game [height length]
   (let [start-pos [(/ height 2) (/ length 2)]
@@ -66,8 +66,6 @@
                :b backward})
 
 (defn execute [game commands]
-  (let [funcs (->> commands
-                   (map (comp op->func
-                              keyword
-                              str)))]
+  (let [str->func (comp op->func keyword str)
+        funcs     (map str->func commands)]
     (reduce (fn [g f] (f g)) game funcs)))

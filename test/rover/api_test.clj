@@ -107,7 +107,7 @@
 
 (fact "rover should not move over obstacle"
   (-> obstacle-game
-      forward) => (throws Exception "I can't do that, Dave!"))
+      forward) => (throws Exception "I'm afraid I can't do that, Dave!"))
 
 
 ;;; Execute command sequences
