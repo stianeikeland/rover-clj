@@ -12,7 +12,7 @@
 (defn print-map [game]
   (let [world (assoc-in (:world game) (:position game) (:direction game))]
     (doseq [row (mapv (partial map terrain) world)]
-      (println row))))
+      (println (apply str row)))))
 
 (defn play [game]
   (try (loop [game game]
@@ -26,7 +26,7 @@
          (println (style (.getMessage e) :red)))))
 
 (defn play-game []
-  (play (new-game 20 50)))
+  (play (new-game 24 80)))
 
 (defn -main []
   (play-game))
