@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [myguidingstar/clansi "1.3.0"]]
   :main rover.console
-  :profiles {:dev {:dependencies [[midje "1.6.3"]]}})
+  :profiles {:dev {:plugins [[lein-midje "3.1.1"]]
+                   :dependencies [[midje "1.6.3"]]}})
